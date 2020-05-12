@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+    font-family: Arial;
+    font-size: 12px;
+    color: white;
+}
+
+.main-title {
+    font-size: xx-large;
+}
+
+.header-main {
+    height: 60px;
+    background-color: gray;
+}
