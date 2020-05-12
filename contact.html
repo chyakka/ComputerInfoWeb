@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Computer Info</title>
+        <link rel="stylesheet" type="text/css" href="css-layout.css">
+    </head>
+    <body onload="setTimezoneTime()">
+        <div class="top-container">
+            <h1 class="main-title">ComputerInfo</h1>
+            <div class="header-main">
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="cpu.html">CPU</a></li>
+                    <li><a href="gpu.html">GPU</a></li>
+                    <li><a href="ram.html">RAM</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div> 
+        </div>
+
+        <div class="main-container">
+            <h1 class="index-title">Contact Us</h1>
+            <div class="index-container">
+                <p id="timecontents">You can contact us via email, we check it daily between 9am-5pm in the UK timezone:<br>webadmin@computerinfo.com<br><br>Time for us currently: </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Copyright &copy; 2020 - Ryan Watts</p>
+        </div>
+    </body>
+
+    <script>
+        //This function allows a set of options to be passed through a datetime format class to fetch a specific time from a specific place around the world, UK in our case and appends it to our text.
+        function setTimezoneTime()
+        {
+            let options = {
+            timeZone: 'Europe/London',
+            hour: 'numeric',
+            minute: 'numeric',
+            },
+            formatter = new Intl.DateTimeFormat([], options);
+
+            document.getElementById("timecontents").innerHTML = "You can contact us via email, we check it daily between 9am-5pm in the UK timezone:<br>webadmin@computerinfo.com<br><br>Time for us currently: " + formatter.format(new Date());
+        }
+    </script>
+</html>

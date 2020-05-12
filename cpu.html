@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <!-- Important meta information for page such as the link to the css sheet and the title that will appear in the browser -->
+        <title>CPU Info</title>
+        <link rel="stylesheet" type="text/css" href="css-layout.css">
+    </head>
+    <body>
+        <div class="top-container">
+            <h1 class="main-title">ComputerInfo</h1>
+            <div class="header-main">
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="cpu.html">CPU</a></li>
+                    <li><a href="gpu.html">GPU</a></li>
+                    <li><a href="ram.html">RAM</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div> 
+        </div>
+
+        <!-- Main content of this specific page -->
+        <div class="main-container">
+            <h1 class="index-title">Central Processing Unit (CPU)</h1>
+
+            <div class="info-container">
+                <div class="info-box">
+                    <p>Processors are an important part of the computer, they do all the calculations and are the brain of the computer. They are placed into a socket in the motherboard, having latches to seal them into place. Their speed is what determines how quickly they can calculate, this is measured in hertz. Not a lot of companies manufactor processors and the two most common manufacturers are Intel and AMD.</p>
+                </div>
+
+                <div class="info-box">
+                    <img src="Assets/processor.png" alt="processor" height="250px" class="center">
+                </div>
+            </div>
+
+            <!-- Start of the question section -->
+            <div class="quiz-container">
+                <h2>Question One</h2>
+                <label for="question-one">Processor clock speed can be measured in what?</label>
+                <br>
+                <!-- The select element is what we use to enable dropdown options, this allows us to get the users answer by referencing the options array. -->
+                <select id="question-one">
+                    <option value="none">Select...</option>
+                    <option value="answerone">Hertz</option>
+                    <option value="answertwo">Litres</option>
+                    <option value="answerthree">Watts</option>
+                </select>
+
+                <h2>Question Two</h2>
+
+                <label for="question-two">Which of these is a known processor manufacturer?</label>
+                <br>
+                <select id="question-two">
+                    <option value="none">Select...</option>
+                    <option value="answerone">Heinz</option>
+                    <option value="answertwo">Abarth</option>
+                    <option value="answerthree">AMD</option>
+                </select>
+
+                <h2>Question Three</h2>
+
+                <label for="question-three">A processor is known as the what of a computer?</label>
+                <br>
+                <select id="question-three">
+                    <option value="none">Select...</option>
+                    <option value="answerone">Brain</option>
+                    <option value="answertwo">Legs</option>
+                    <option value="answerthree">Heart</option>
+                </select>
+
+                <br>
+                <p id="results"></p>
+                <br>
+
+                <button onclick="SubmitAnswers()" class="center">Submit</button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="footer">
+            <p>Copyright &copy; 2020 - Ryan Watts</p>
+        </div>
+    </body>
+
+    <script>
+        function SubmitAnswers()
+        {
+            // This gets the dropdown element of the web page and fetches the selected result in the options array.
+            var questionOne = document.getElementById("question-one");
+            var chosenAnswerOne = questionOne.options[questionOne.selectedIndex].value;
+
+            var questionTwo = document.getElementById("question-two");
+            var chosenAnswerTwo = questionTwo.options[questionTwo.selectedIndex].value;
+
+            var questionThree = document.getElementById("question-three");
+            var chosenAnswerThree = questionOne.options[questionThree.selectedIndex].value;
+
+
+            // Here it is checked if any of the answers are equal to none, this means the user has not selected anything and will inform the user.
+            if(chosenAnswerOne == "none" || chosenAnswerTwo == "none" || chosenAnswerThree == "none")
+            {
+                alert("One or more answers not filled out!");
+                return;
+            }
+
+            // The answers to the question, each answer appends more text to the 'results' element which is a p tag.
+            if(chosenAnswerOne == "answerone")
+            {
+                document.getElementById("results").innerHTML = "Answer one is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML = "Answer one is incorrect!";
+            }
+
+            if(chosenAnswerTwo == "answerthree")
+            {
+                document.getElementById("results").innerHTML += "<br>Answer two is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML += "<br>Answer two is incorrect!";
+            }
+
+            if(chosenAnswerThree == "answerone")
+            {
+                document.getElementById("results").innerHTML += "<br>Answer three is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML += "<br>Answer three is incorrect!";
+            }
+        }
+    </script>
+</html>

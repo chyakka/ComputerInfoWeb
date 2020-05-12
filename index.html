@@ -3,30 +3,31 @@
         <title>Computer Info</title>
         <link rel="stylesheet" type="text/css" href="css-layout.css">
     </head>
-    <body>
+    <body onload="alert('This website uses cookies!');">
+        <!-- Navbar, this remains the same throughout all pages -->
         <div class="top-container">
-            <h1 class="main-title">Computer Info</h1>
+            <h1 class="main-title">ComputerInfo</h1>
             <div class="header-main">
                 <ul>
-                    <li><a href="">Index</a></li>
-                    <li><a href="">CPU</a></li>
-                    <li><a href="">GPU</a></li>
-                    <li><a href="">RAM</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="cpu.html">CPU</a></li>
+                    <li><a href="gpu.html">GPU</a></li>
+                    <li><a href="ram.html">RAM</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div> 
         </div>
 
         <div class="main-container">
             <h1 class="index-title">Homepage</h1>
-
-            <div class="info-box">
-                <p>Test</p>
+            <div class="index-container">
+                <p>Welcome! The purpose of this web page is to educate people on common computer components. <br><br>After finishing each page they will have a quiz to complete, this will comprise of three questions.<br><br> The questions will be based on the content that is shown to you in each article so, pay attention and good luck!</p>
             </div>
+        </div>
 
-            <div class="info-box">
-                <p>Test</p>
-            </div>
+        <!-- The simple footer - another component that remains consistent throughout all pages -->
+        <div class="footer">
+            <p>Copyright &copy; 2020 - Ryan Watts</p>
         </div>
     </body>
 </html>

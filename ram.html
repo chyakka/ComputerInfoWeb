@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title>CPU Info</title>
+        <link rel="stylesheet" type="text/css" href="css-layout.css">
+    </head>
+    <body>
+        <div class="top-container">
+            <h1 class="main-title">ComputerInfo</h1>
+            <div class="header-main">
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="cpu.html">CPU</a></li>
+                    <li><a href="gpu.html">GPU</a></li>
+                    <li><a href="ram.html">RAM</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div> 
+        </div>
+
+        <div class="main-container">
+            <h1 class="index-title">Random Access Memory (RAM)</h1>
+
+            <div class="info-container">
+                <div class="info-box">
+                    <p>Random Access Memory (RAM) is a type of computer memory that usually used to store working data, this means that the data is being actively required and changes and can be quickly disposed of when needed. RAM is volatile memeory, meaning the data on it is destroyed when power is lost such as a PC shutdown.</p>
+                </div>
+
+                <div class="info-box">
+                    <img src="Assets/ram.png" alt="processor" height="250px" class="center">
+                </div>
+            </div>
+
+            <div class="quiz-container">
+                <h2>Question One</h2>
+                <label for="question-one">What type of data does RAM store?</label>
+                <br>
+                <select id="question-one">
+                    <option value="none">Select...</option>
+                    <option value="answerone">Lazy</option>
+                    <option value="answertwo">Biometric</option>
+                    <option value="answerthree">Working</option>
+                </select>
+
+                <h2>Question Two</h2>
+
+                <label for="question-two">When a PC is shutdown what happens to data on the RAM?</label>
+                <br>
+                <select id="question-two">
+                    <option value="none">Select...</option>
+                    <option value="answerone">It is kept on the RAM.</option>
+                    <option value="answertwo">It transfers to the hard drive.</option>
+                    <option value="answerthree">It gets destroyed.</option>
+                </select>
+
+                <h2>Question Three</h2>
+
+                <label for="question-three">RAM is known as what type of memory?</label>
+                <br>
+                <select id="question-three">
+                    <option value="none">Select...</option>
+                    <option value="answerone">Volatile</option>
+                    <option value="answertwo">Non-volatile</option>
+                    <option value="answerthree">Flash</option>
+                </select>
+
+                <br>
+                <p id="results"></p>
+                <br>
+
+                <button onclick="SubmitAnswers()" class="center">Submit</button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="footer">
+            <p>Copyright &copy; 2020 - Ryan Watts</p>
+        </div>
+    </body>
+
+    <script>
+        function SubmitAnswers()
+        {
+            var questionOne = document.getElementById("question-one");
+            var chosenAnswerOne = questionOne.options[questionOne.selectedIndex].value;
+
+            var questionTwo = document.getElementById("question-two");
+            var chosenAnswerTwo = questionTwo.options[questionTwo.selectedIndex].value;
+
+            var questionThree = document.getElementById("question-three");
+            var chosenAnswerThree = questionOne.options[questionThree.selectedIndex].value;
+
+            if(chosenAnswerOne == "none" || chosenAnswerTwo == "none" || chosenAnswerThree == "none")
+            {
+                alert("One or more answers not filled out!");
+                return;
+            }
+
+            if(chosenAnswerOne == "answerthree")
+            {
+                document.getElementById("results").innerHTML = "Answer one is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML = "Answer one is incorrect!";
+            }
+
+            if(chosenAnswerTwo == "answerthree")
+            {
+                document.getElementById("results").innerHTML += "<br>Answer two is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML += "<br>Answer two is incorrect!";
+            }
+
+            if(chosenAnswerThree == "answerone")
+            {
+                document.getElementById("results").innerHTML += "<br>Answer three is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML += "<br>Answer three is incorrect!";
+            }
+        }
+    </script>
+</html>

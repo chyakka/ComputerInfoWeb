@@ -1,7 +1,9 @@
+
+/* Main body layout - this is rarely overwritten in the website. */
 body {
     background-color: rgb(19, 19, 19);
     font-family: Arial;
-    font-size: 12px;
+    font-size: 16px;
     color: white;
     margin: 0;
 }
@@ -23,6 +25,7 @@ body {
     padding-left: 10px;
 }
 
+/* ul and li style used to style the navbar to how it is */
 ul {
     list-style-type: none;
     margin: 0;
@@ -47,20 +50,67 @@ li a:hover {
     background-color: rgb(19, 19, 19);
 }
 
+
+/* Majority of the important div design code, including padding, layouts, borders and fonts */
 .main-container {
     margin: 30;
     padding: 10;
 }
 
+.info-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .info-box {
-    justify-content: center;
-    display: inline-flex;
-    margin: 20;
     width: 500px;
-    background-color: rgb(56, 56, 56);
+    height: 250px;
+    padding: 10px;
+    outline-style: solid;
+    outline-color: rgb(56, 56, 56);
 }
 
 .index-title {
     font-size: xx-large;
     text-align: center;
+}
+
+.index-container {
+    padding: 15px;
+    width: 500px;
+    height: 300px;
+    outline-style: solid;
+    outline-color: rgb(56, 56, 56);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer design, forces it to the bottom with the bottom: 0 line, the fixed position prevents it from ever adjusting and being moved */
+.footer {
+    padding-left: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+}
+
+.quiz-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding: 20;
+    width: 30%;
+    outline-style: solid;
+    outline-color: rgb(56, 56, 56);
+}
+
+/* Neat bit of code that center aligns any element that doesn't have align built in (such as text) */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

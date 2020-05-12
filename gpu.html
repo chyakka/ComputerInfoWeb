@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title>CPU Info</title>
+        <link rel="stylesheet" type="text/css" href="css-layout.css">
+    </head>
+    <body>
+        <div class="top-container">
+            <h1 class="main-title">ComputerInfo</h1>
+            <div class="header-main">
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="cpu.html">CPU</a></li>
+                    <li><a href="gpu.html">GPU</a></li>
+                    <li><a href="ram.html">RAM</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div> 
+        </div>
+
+        <div class="main-container">
+            <h1 class="index-title">Graphics Processing Unit (GPU)</h1>
+
+            <div class="info-container">
+                <div class="info-box">
+                    <img src="Assets/gpu.png" alt="gpu" height="250px" class="center">
+                </div>
+
+                <div class="info-box">
+                    <p>GPUs specialise in processing graphics and outputting display. They are used in a variety of devices from computers to mobile phones! When you plug a monitor into a computer it is likely you will need to plug the cable into your graphics card, this could be a VGA or a HDMI cable. When graphical processing is taking place the GPU is using cuda cores to process the graphics.</p>
+                </div>
+            </div>
+
+            <div class="quiz-container">
+                <h2>Question One</h2>
+                <label for="question-one">Cores in a GPU are known as what?</label>
+                <br>
+                <select id="question-one">
+                    <option value="none">Select...</option>
+                    <option value="answerone">Luda</option>
+                    <option value="answertwo">Cuda</option>
+                    <option value="answerthree">Super</option>
+                </select>
+
+                <h2>Question Two</h2>
+
+                <label for="question-two">Which of these are video cables that are plugged into a GPU?</label>
+                <br>
+                <select id="question-two"">
+                    <option value="none">Select...</option>
+                    <option value="answerone">USB</option>
+                    <option value="answertwo">VGA</option>
+                    <option value="answerthree">Ethernet</option>
+                </select>
+
+                <h2>Question Three</h2>
+
+                <label for="question-three">In which of these devices could you find a GPU?</label>
+                <br>
+                <select id="question-three">
+                    <option value="none">Select...</option>
+                    <option value="answerone">Fax Machine</option>
+                    <option value="answertwo">Mobile Phone</option>
+                    <option value="answerthree">Microwave</option>
+                </select>
+
+                <br>
+                <p id="results"></p>
+                <br>
+
+                <button onclick="SubmitAnswers()" class="center">Submit</button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="footer">
+            <p>Copyright &copy; 2020 - Ryan Watts</p>
+        </div>
+    </body>
+
+    <script>
+        function SubmitAnswers()
+        {
+            var questionOne = document.getElementById("question-one");
+            var chosenAnswerOne = questionOne.options[questionOne.selectedIndex].value;
+
+            var questionTwo = document.getElementById("question-two");
+            var chosenAnswerTwo = questionTwo.options[questionTwo.selectedIndex].value;
+
+            var questionThree = document.getElementById("question-three");
+            var chosenAnswerThree = questionOne.options[questionThree.selectedIndex].value;
+
+            if(chosenAnswerOne == "none" || chosenAnswerTwo == "none" || chosenAnswerThree == "none")
+            {
+                alert("One or more answers not filled out!");
+                return;
+            }
+
+            if(chosenAnswerOne == "answertwo")
+            {
+                document.getElementById("results").innerHTML = "Answer one is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML = "Answer one is incorrect!";
+            }
+
+            if(chosenAnswerTwo == "answertwo")
+            {
+                document.getElementById("results").innerHTML += "<br>Answer two is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML += "<br>Answer two is incorrect!";
+            }
+
+            if(chosenAnswerThree == "answertwo")
+            {
+                document.getElementById("results").innerHTML += "<br>Answer three is correct!";
+            }
+            else
+            {
+                document.getElementById("results").innerHTML += "<br>Answer three is incorrect!";
+            }
+        }
+    </script>
+</html>
